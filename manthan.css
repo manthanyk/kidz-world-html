@@ -1,1 +1,237 @@
+/* --- Global Styles & Mobile-First (Default) --- */
+
+:root {
+  --primary-color: #ff6f91;
+  /* Pink */
+  --secondary-color: #ff9671;
+  /* Orange */
+  --accent-color: #ffc75f;
+  /* Yellow */
+  --text-dark: #333;
+  --text-light: #fff;
+  --bg-light: #f4f4f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+/* --- Header & Navigation (Mobile) --- */
+.main-header {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  /* Hide on mobile by default */
+  display: none;
+  list-style: none;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+  position: relative;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: var(--accent-color);
+  color: var(--text-dark);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* --- Product Grid (Mobile) --- */
+.product-grid {
+  display: grid;
+  /* Single column for mobile */
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background: var(--text-light);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.price {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.add-to-cart {
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: var(--primary-color);
+}
+
+/* --- Footer (Mobile) --- */
+.main-footer {
+  background: var(--text-dark);
+  color: var(--bg-light);
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--bg-light);
+  margin: 0 10px;
+  display: block;
+  /* Stack links on mobile */
+  padding: 5px 0;
+}
+
+/* ================================================= */
+/* --- MEDIA QUERY for Desktop (e.g., Min Width 768px) --- */
+/* ================================================= */
+
+@media (min-width: 768px) {
+  /* --- Header & Navigation (Desktop) --- */
+  .menu-toggle {
+    display: none;
+    /* Hide the hamburger icon on desktop */
+  }
+
+  .nav-links {
+    display: flex;
+    /* Show the links in a row on desktop */
+    margin-right: 20px;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    color: var(--text-light);
+    padding: 5px 10px;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+
+  /* Ensure the main header has space between elements */
+  .main-header {
+    padding: 15px 40px;
+  }
+
+  /* --- Product Grid (Desktop) --- */
+  .product-grid {
+    /* Three columns for desktop view */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    /* Optional: Center the content */
+    margin: 0 auto;
+  }
+
+  .product-card {
+    padding: 25px;
+  }
+
+  /* --- Footer (Desktop) --- */
+  .main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  .footer-links {
+    display: flex;
+  }
+
+  .footer-links a {
+    margin: 0 15px;
+    display: inline;
+    /* Display links in a row on desktop */
+  }
+}
+
+/* ================================================= */
+/* --- Additional Media Query for larger screens (optional) --- */
+/* ================================================= */
+@media (min-width: 1024px) {
+  .product-grid {
+    /* Four columns for very large screens */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
